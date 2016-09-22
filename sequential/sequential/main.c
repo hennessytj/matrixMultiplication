@@ -17,9 +17,9 @@
  * Can finally check off dynamically allocating 2D arrays in C from
  * bucket list!
  ************************************************************************/
-static int N = 2;
-static int P = 2;
-static int M = 2;
+static int N = 20;
+static int P = 20;
+static int M = 20;
 
 int main(int argc, const char * argv[])
 {
@@ -138,6 +138,11 @@ void setUpMatrices(Matrix *a, Matrix *b, Matrix *c)
  ***********************************************************************/
 void printResult(Matrix *a, Matrix *b, Matrix *c, int bVal)
 {
+    if (a->rows > 8)
+    {
+        // Too big don't bother printing
+        return;
+    }
     if (bVal)
     {
         printf("Matrix A\n");
