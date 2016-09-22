@@ -174,11 +174,6 @@ void print2D(Matrix *a)
 {
     int i;
     int j;
-    if (a->rows > 8)
-    {
-        // Too big don't bother printing
-        return;
-    }
     printf("\n");
     for (i = 0; i < a->rows; i++)
     {
