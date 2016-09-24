@@ -17,9 +17,9 @@
  * Can finally check off dynamically allocating 2D arrays in C from
  * bucket list!
  ************************************************************************/
-static int N = 20;
-static int P = 20;
-static int M = 20;
+static int N = 3;
+static int P = 3;
+static int M = 3;
 
 int main(int argc, const char * argv[])
 {
