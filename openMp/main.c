@@ -51,6 +51,7 @@ int C[N][M];
  ******************************************************************************/
 void multiply()
 {
+    // Not working yet...
     int i, j, k;
     #pragma omp parallel for
     for (i = 0; i < N; i++)
