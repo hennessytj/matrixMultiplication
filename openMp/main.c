@@ -51,9 +51,8 @@ int C[N][M];
  ******************************************************************************/
 void multiply()
 {
-    // Not working yet...
     int i, j, k;
-    #pragma omp parallel for
+    #pragma omp parallel for private(i, j, k)
     for (i = 0; i < N; i++)
         for (j = 0; j < M; j++)
             for (k = 0; k < P; k++)
@@ -115,7 +114,7 @@ void setUpMatrices()
  ***********************************************************************/
 void printResult()
 {
-    if (FALSE)
+    if (TRUE)
     {
         // Too big don't bother printing
         return;
