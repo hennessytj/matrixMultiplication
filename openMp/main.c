@@ -4,10 +4,10 @@
  *
  * Description: Given two square matrices, perform matrix multiplication
  * and store the result. Performs matrix multiplication concurrently 
- * using pthreads.
+ * using openMP.
  *
- * compile: %gcc main.c 2DArray.c -o mmpthreads
- * execute: ./mmpthreads
+ * compile: %gcc main.c 2DArray.c -o mmopenmp
+ * execute: ./mmopenmp
  *
  * Process:
  * 1.) Fill two 2D arrays A and B with random values.

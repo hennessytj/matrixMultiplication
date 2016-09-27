@@ -99,7 +99,7 @@ void multiplyMatrices(int row)
 void *partition(void *p)
 {
     int i;
-    int tid = (int) p;
+    long tid = (long) p;
     int numRows = N / NUM_THREADS;
     int remainingRows = N % NUM_THREADS;
     int startRow = numRows * tid;
