@@ -128,6 +128,7 @@ void print2D(int rows, int cols, int a[][cols])
 {
     int i;
     int j;
+    if (rows > 10) return;
     printf("\n");
     for (i = 0; i < rows; i++)
     {

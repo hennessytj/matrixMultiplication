@@ -6,7 +6,7 @@
  * and store the result. Performs matrix multiplication concurrently 
  * using pthreads.
  *
- * compile: %gcc main.c 2DArray.c -o mmpthreads
+ * compile: %gcc main.c 2DArray.c -o mmpthreads -lpthread
  * execute: ./mmpthreads
  *
  * Process:
@@ -16,9 +16,9 @@
  ************************************************************************/
 
 // Use constants so size is known at compile time for 2D global arrays
-#define N 3
-#define P 3
-#define M 3
+#define N 2000
+#define P 2000
+#define M 2000
 
 int A[N][P];
 int B[P][M];
