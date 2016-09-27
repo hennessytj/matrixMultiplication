@@ -60,6 +60,10 @@ void job(void* s) {
     Matrix* a;
     Matrix* b;
 
+    int thread_a_current_row;
+    int thread_b_current_row;
+    int thread_b_current_column;
+
     a = operation->a;
     b = operation->b;
 
@@ -78,12 +82,9 @@ void job(void* s) {
             pthread_exit(NULL);
         }
 
-        result =
-                a->m[operation->a_current_row][operation->b_current_row] *
-                b->m[operation->b_current_row][operation->b_current_column];
-
-        dest_column = operation->b_current_column;
-        dest_row = operation->a_current_row;
+        thread_a_current_row = operation->a_current_row;
+        thread_b_current_row = operation->b_current_row;
+        thread_b_current_column = operation->b_current_column;
 
         operation->b_current_row++;
         if (b->rows == operation->b_current_row) {
@@ -96,8 +97,12 @@ void job(void* s) {
         }
         pthread_mutex_unlock(&lock);
 
+        result =
+                a->m[thread_a_current_row][thread_b_current_row] *
+                b->m[thread_b_current_row][thread_b_current_column];
+
         pthread_mutex_lock(&destination_lock);
-        operation->dest->m[dest_row][dest_column] += result;
+        operation->dest->m[thread_a_current_row][thread_b_current_column] += result;
         pthread_mutex_unlock(&destination_lock);
     }
 }
