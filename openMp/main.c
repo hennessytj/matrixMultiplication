@@ -6,7 +6,7 @@
  * and store the result. Performs matrix multiplication concurrently 
  * using openMP.
  *
- * compile: %gcc main.c 2DArray.c -o mmopenmp
+ * compile: %gcc main.c 2DArray.c -o mmopenmp -fopenmp
  * execute: ./mmopenmp
  *
  * Process:

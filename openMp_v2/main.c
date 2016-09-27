@@ -6,7 +6,7 @@
  * and store the result. OpenMP implementation version two, does not use
  * global variables for arrays.
  *
- * compile: %gcc main.c 2DArray.c matrix.c -o mmopenmp_v2
+ * compile: %gcc main.c 2DArray.c matrix.c -o mmopenmp_v2 -fopenmp
  * execute: ./mmopenmp_v2
  *
  * Process:
