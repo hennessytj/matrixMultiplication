@@ -21,7 +21,7 @@
  ************************************************************************/
 
 /*****************************   setUp2D   ******************************
- * void setUp2D(Matrix *a, int numRows, int numCols)
+ * void setUp2D(Matrix *a, int bFillRand)
  *
  * Description: Assigns values to Matrix structure, allocates memory
  * for it, and assigns random values to it.
@@ -36,17 +36,14 @@
  * a             in/out      ptr to Matrix structure, see define.h.
  *                           Assigns values to a->rows and a->cols and stores
  *                           reference to dynamic 2D array.
- * numRows       in          Total number of rows in 2D array
- * numCols       in          Total number of columns in 2D array
+ * bFillRand     in          Boolean used to determine values for array
  *
  * NOTES:
  * - Assumes numRows and numCols are accurate and viable.
  * - Failure of memory allocation aborts program.
  ***********************************************************************/
-void setUp2D(Matrix *a, int numRows, int numCols, int bFillRand)
+void setUp2D(Matrix *a, int bFillRand)
 {
-    a->rows = numRows;
-    a->cols = numCols;
     allocate2D(a);
     if (bFillRand)
     {
@@ -62,7 +59,7 @@ void setUp2D(Matrix *a, int numRows, int numCols, int bFillRand)
  * void allocate2D(Matrix *a)
  *
  * Description: Dynamically allocates memory for Matrix structure's 2D
- * array in.  
+ * array.  
  *
  * Process:
  * 1.) Allocate memory for array of pointers.
