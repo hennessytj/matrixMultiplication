@@ -22,7 +22,7 @@ typedef struct
 #define ARRAY_MEMORY_ERROR  10
 
 // Random numbers
-#define RANGE 4    // [0..RANGE)
+#define RANGE               4    // [0..RANGE)
 
 /***** Function Prototypes *****/
 // main.c prototypes
